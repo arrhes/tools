@@ -1,0 +1,31 @@
+{
+    "name": "@arrhes/tools",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "generate": "pnpm drizzle-kit generate --config=drizzle.config.ts",
+        "push": "pnpm drizzle-kit push --config=drizzle.config.ts",
+        "pull": "pnpm drizzle-kit introspect --config=drizzle.config.ts",
+        "migrate": "pnpm drizzle-kit migrate --config=drizzle.config.ts",
+        "seed": "tsx ./src/seed/seed.ts",
+        "clear": "tsx ./src/clearDB.ts",
+        "sendSQL": "tsx ./src/sendSQL.ts",
+        "reset": "tsx ./src/clearDB.ts && pnpm run push && tsx ./src/seed/seed.ts",
+        "drop": "pnpm drizzle-kit drop --config=drizzle.config.ts"
+    },
+    "dependencies": {
+        "@arrhes/schemas": "1.4.0",
+        "@ngneat/falso": "8.0.2",
+        "dotenv": "17.2.0",
+        "drizzle-orm": "0.44.3",
+        "nanoid": "5.1.5",
+        "postgres": "3.4.7",
+        "valibot": "1.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "24.0.14",
+        "drizzle-kit": "0.31.4",
+        "tsx": "4.20.3",
+        "typescript": "5.8.3"
+    }
+}
